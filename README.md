@@ -66,16 +66,18 @@ This was developed as my **Engineering Design Project** at Dicle University, Ele
 ### Detection Results
 
 <div align="center">
-  <img src="results/detection_examples/test1.jpg" width="45%" alt="Detection Example 1"/>
-  <img src="results/detection_examples/test2.jpg" width="45%" alt="Detection Example 2"/>
+  <img src="results/detection_examples/1-45-_jpeg.rf.3e75bf5857217be6b01efa060cdc652e.jpg" width="45%" alt="Detection Example 1"/>
+  <img src="results/detection_examples/1-38-_jpeg.rf.4751e3a636cd2defee6d31df52e3f63c.jpg" width="45%" alt="Detection Example 2"/>
   <p><i>YOLOv8 detecting dental implants, fillings, and root canal treatments</i></p>
 </div>
 
 ### Performance Metrics
 
 <div align="center">
-  <img src="results/f1_curve.png" width="45%" alt="F1 Curve"/>
-  <img src="results/pr_curve.png" width="45%" alt="PR Curve"/>
+  <img src="results/F1_curve.png" width="45%" alt="F1 Curve"/>
+  <img src="results/PR_curve.png" width="45%" alt="PR Curve"/>
+  <img src="results/P_curve.png" width="45%" alt="P Curve"/>
+  <img src="results/R_curve.png" width="45%" alt="R Curve"/>
 </div>
 
 <div align="center">
@@ -204,30 +206,42 @@ jupyter notebook
 ```
 dental-xray-yolov8-detection/
 │
-├── data/                        # Dataset
-│   ├── sample_images/           # Sample X-ray images
-│   └── README.md                # Dataset documentation
+├── data/
+│   ├── sample_images/            # Anonymized sample panoramic dental X-ray images
+│   ├── annotations/              # Sample YOLO-format annotations
+│   └── README.md                 # Dataset description and ethical considerations
 │
-├── models/                      # Trained models
-│   └── best.pt                  # Best trained model
+├── models/
+│   ├── yolov8n.pt                 # Pretrained YOLOv8 weights (optional)
+│   └── best.pt                    # Trained model weights (if included)
 │
-├── notebooks/                   # Jupyter notebooks
-│   ├── training.ipynb           # Training notebook
-│   └── evaluation.ipynb         # Evaluation notebook
+├── notebooks/
+│   └── training_and_evaluation.ipynb   # Model training and evaluation notebook
 │
-├── src/                         # Source code
-│   ├── train.py                 # Training script
-│   ├── detect.py                # Detection script
-│   └── utils.py                 # Utility functions
+├── src/
+│   ├── train.py                  # YOLOv8 training pipeline
+│   ├── detect.py                 # Inference and detection script
+│   ├── utils.py                  # Utility functions
+│   └── config.py                 # Project configuration parameters
 │
-├── results/                     # Training results
-│   ├── confusion_matrix.png     # Confusion matrix
-│   ├── f1_curve.png             # F1 curve
-│   ├── pr_curve.png             # Precision-Recall curve
-│   └── detection_examples/      # Detection results
+├── results/
+│   ├── confusion_matrix.png      # Confusion matrix visualization
+│   ├── f1_curve.png              # F1-score curve
+│   ├── pr_curve.png              # Precision-Recall curve
+│   ├── results.png               # Training results summary
+│   ├── labels.png                # Label distribution
+│   └── detection_examples/       # Sample detection outputs
+│       ├── test1.jpg
+│       ├── test2.jpg
+│       └── ...
 │
-├── requirements.txt             # Python dependencies
-└── README.md                    # This file
+├── docs/
+│   └── presentation.pdf          # Project presentation slides (optional)
+│
+├── .gitignore                    # Git ignore rules
+├── requirements.txt              # Python dependencies
+├── README.md                     # Project overview and usage instructions
+
 ```
 
 ---
@@ -310,20 +324,6 @@ dental-xray-yolov8-detection/
 - [ ] Consultation with dental professionals
 
 ---
-
-## 📄 Citation
-
-If you use this project in your research, please cite:
-
-```bibtex
-@thesis{sik2023dental,
-  title={Detection of Dental Disorders on Panoramic Dental X-Rays Using Image Processing and Deep Learning Methods: YOLO Approach},
-  author={ŞIK, Abdurrezzak and POLAT, Erdal},
-  school={Dicle University},
-  year={2023},
-  type={Engineering Design Project}
-}
-```
 
 ---
 
