@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# Model files (büyük dosyalar)
+*.pt
+*.pth
+*.weights
+*.h5
+models/*.pt
+!models/best.pt
+!models/README.md
+
+# Large datasets
+data/raw/*
+data/processed/*
+data/train/*
+data/test/*
+data/valid/*
+!data/sample_images/
+!data/README.md
+
+# Roboflow
+roboflow/
+
+# Results
+results/train/
+results/val/
+*.cache
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
